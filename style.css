@@ -1,57 +1,86 @@
+/* General body styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
-    background-color: #f0f0f0;
+    background-color: #ffffff;
 }
 
+/* Header styles */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Calendar table styles */
 #schedule {
     width: 100%;
-    border-collapse: collapse;
-    background-color: white;
+    border-collapse: separate; /* Separates cell borders */
+    border-spacing: 1px; /* Spacing between cells */
+    background-color: #f1f3f4; /* Background color between cells */
 }
 
+/* Styles for header and body cells */
 #schedule th, #schedule td {
-    border: 1px solid #4CAF50;
+    border: none;
     padding: 10px;
     text-align: left;
     vertical-align: top;
 }
 
+/* Specific styles for table header */
 #schedule th {
-    background-color: #f2f2f2;
-    font-weight: bold;
+    background-color: #ffffff;
+    font-weight: normal;
     text-align: center;
+    color: #70757a;
+    font-size: 0.9em;
 }
 
+/* Styles for table body cells */
 #schedule td {
     height: 100px;
+    background-color: #ffffff;
 }
 
+/* Styles for day number */
 .day {
     font-weight: bold;
     display: block;
     margin-bottom: 5px;
+    color: #70757a;
 }
 
-.highlight {
-    color: #FF69B4;
-    font-weight: bold;
-    text-decoration: underline;
-}
-
+/* General styles for tasks/events */
 .task {
     display: block;
-    border: 1px solid #000;
-    padding: 2px;
+    padding: 2px 4px;
     margin-top: 5px;
+    border-radius: 4px;
+    font-size: 0.9em;
 }
 
+/* Specific styles for birthdays */
 .birthday {
-    color: blue;
-    font-weight: bold;
+    background-color: #d2e3fc;
+    color: #1967d2;
 }
 
-del {
-    color: #999;
+/* Specific styles for appointments */
+.appointment {
+    background-color: #e8f5e9;
+    color: #0b8043;
+}
+
+/* Specific styles for general events */
+.event {
+    background-color: #fce8e6;
+    color: #d93025;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #70757a;
 }
