@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 20px;
     background-color: #ffffff;
+    font-size: 14px;
 }
 
 /* Header styles */
@@ -14,16 +15,18 @@ header {
 
 /* Calendar table styles */
 #schedule {
-    width: 100%;
-    border-collapse: separate; /* Separates cell borders */
-    border-spacing: 1px; /* Spacing between cells */
-    background-color: #f1f3f4; /* Background color between cells */
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 1px;
+    background-color: #f1f3f4;
 }
 
 /* Styles for header and body cells */
 #schedule th, #schedule td {
     border: none;
-    padding: 10px;
+    padding: 5px;
     text-align: left;
     vertical-align: top;
 }
@@ -39,7 +42,7 @@ header {
 
 /* Styles for table body cells */
 #schedule td {
-    height: 100px;
+    height: 80px;
     background-color: #ffffff;
 }
 
@@ -47,7 +50,7 @@ header {
 .day {
     font-weight: bold;
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
     color: #70757a;
 }
 
@@ -55,9 +58,9 @@ header {
 .task {
     display: block;
     padding: 2px 4px;
-    margin-top: 5px;
+    margin-top: 3px;
     border-radius: 4px;
-    font-size: 0.9em;
+    font-size: 0.85em;
 }
 
 /* Specific styles for birthdays */
@@ -83,4 +86,20 @@ footer {
     text-align: center;
     margin-top: 20px;
     color: #70757a;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    #schedule {
+        width: 100%;
+    }
+    #schedule th, #schedule td {
+        padding: 2px;
+    }
+    .task {
+        font-size: 0.8em;
+    }
+    #schedule td {
+        height: 60px;
+    }
 }
