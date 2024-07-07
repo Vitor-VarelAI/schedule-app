@@ -1,76 +1,70 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html> <!-- Define document type as HTML5 -->
+<html lang="pt-BR"> <!-- Set page language to Brazilian Portuguese -->
 <head>
-    <!-- Metadados do documento -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"> <!-- Set character encoding to UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configure viewport for responsiveness -->
     <title>Agenda Semanal</title>
-    <!-- Link para o arquivo de estilos CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css"> <!-- Link to CSS stylesheet -->
 </head>
 <body>
-    <!-- Tabela para a agenda semanal -->
-    <table id="schedule">
-        <thead>
-            <!-- Cabeçalho da tabela com os dias da semana -->
-            <tr>
-                <th>Segunda</th>
-                <th>Terça</th>
-                <th>Quarta</th>
-                <th>Quinta</th>
-                <th>Sexta</th>
-                <th>Sábado</th>
-                <th>Domingo</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Linhas da tabela com os dados fictícios -->
-            <tr>
-                <td><span class="day">1</span><del>Catia 20:00</del></td>
-                <td><span class="day">2</span><del>Dentist 12:00</del></td>
-                <td><span class="day">3</span><span class="highlight">PRAIA</span></td>
-                <td><span class="day">4</span>Marisol 9:30<br>Maria Inês 17:00</td>
-                <td><span class="day">5</span><del>Marisol 9:30</del><br>Patricia 9:00<br>Milla 13:00</td>
-                <td><span class="day">6</span>Aniversário<br>da Serena</td>
-                <td><span class="day">7</span></td>
-            </tr>
-            <tr>
-                <td><span class="day">8</span></td>
-                <td><span class="day">9</span></td>
-                <td><span class="day">10</span><span class="task">Check WATER</span></td>
-                <td><span class="day">11</span></td>
-                <td><span class="day">12</span>Patricia 9:00<br>Sabrina 13:00</td>
-                <td><span class="day">13</span></td>
-                <td><span class="day">14</span></td>
-            </tr>
-            <tr>
-                <td><span class="day">15</span></td>
-                <td><span class="day">16</span></td>
-                <td><span class="day">17</span></td>
-                <td><span class="day">18</span></td>
-                <td><span class="day">19</span>Patricia 9:00</td>
-                <td><span class="day">20</span></td>
-                <td><span class="day">21</span><span class="birthday">Roma Birthday!</span></td>
-            </tr>
-            <tr>
-                <td><span class="day">22</span></td>
-                <td><span class="day">23</span>Mãe consulta</td>
-                <td><span class="day">24</span></td>
-                <td><span class="day">25</span></td>
-                <td><span class="day">26</span></td>
-                <td><span class="day">27</span></td>
-                <td><span class="day">28</span></td>
-            </tr>
-            <tr>
-                <td><span class="day">29</span></td>
-                <td><span class="day">30</span>Consulta<br>com Enfermeira<br>12:30</td>
-                <td><span class="day">31</span></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </tbody>
-    </table>
+    <header>
+        <h1>Agenda Semanal</h1>
+    </header>
+    
+    <main>
+        <table id="schedule">
+            <thead>
+                <tr>
+                    <!-- Column headers for days of the week -->
+                    <th>Segunda</th>
+                    <th>Terça</th>
+                    <th>Quarta</th>
+                    <th>Quinta</th>
+                    <th>Sexta</th>
+                    <th>Sábado</th>
+                    <th>Domingo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span class="day">1</span>
+                        <span class="task appointment">Catia 20:00</span>
+                    </td>
+                    <td>
+                        <span class="day">2</span>
+                        <span class="task appointment">Dentista 12:00</span>
+                    </td>
+                    <td>
+                        <span class="day">3</span>
+                        <span class="task event">PRAIA</span>
+                    </td>
+                    <td>
+                        <span class="day">4</span>
+                        <span class="task appointment">Marisol 9:30</span>
+                        <span class="task appointment">Maria Inês 17:00</span>
+                    </td>
+                    <td>
+                        <span class="day">5</span>
+                        <span class="task appointment">Marisol 9:30</span>
+                        <span class="task appointment">Patricia 9:00</span>
+                        <span class="task appointment">Milla 13:00</span>
+                    </td>
+                    <td>
+                        <span class="day">6</span>
+                        <span class="task birthday">Aniversário da Serena</span>
+                    </td>
+                    <td>
+                        <span class="day">7</span>
+                    </td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Minha Agenda</p> <!-- Rodapé com direitos autorais -->
+    </footer>
 </body>
 </html>

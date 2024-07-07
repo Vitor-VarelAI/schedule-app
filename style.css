@@ -21,6 +21,7 @@ body {
 #schedule th {
     background-color: #f2f2f2;
     font-weight: bold;
+    text-align: center;
 }
 
 #schedule td {
@@ -36,6 +37,7 @@ body {
 .highlight {
     color: #FF69B4;
     font-weight: bold;
+    text-decoration: underline;
 }
 
 .task {
