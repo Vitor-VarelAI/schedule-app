@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+#schedule {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+#schedule th, #schedule td {
+    border: 1px solid #4CAF50;
+    padding: 10px;
+    text-align: left;
+    vertical-align: top;
+}
+
+#schedule th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+#schedule td {
+    height: 100px;
+}
+
+.day {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.highlight {
+    color: #FF69B4;
+    font-weight: bold;
+}
+
+.task {
+    display: block;
+    border: 1px solid #000;
+    padding: 2px;
+    margin-top: 5px;
+}
+
+.birthday {
+    color: blue;
+    font-weight: bold;
+}
+
+del {
+    color: #999;
+}
