@@ -35,6 +35,11 @@ const renderCalendar = () => {
     }
     currentDate.innerText = `${months[currMonth]} ${currYear}`;
     daysTag.innerHTML = liTag;
+
+    // Add click event to each day
+    document.querySelectorAll('.days li:not(.inactive)').forEach(day => {
+        day.addEventListener('click', () => openModal(day.dataset.date));
+    });
 }
 
 renderCalendar();
@@ -54,11 +59,30 @@ prevNextIcon.forEach(icon => {
     });
 });
 
-// Add event listener for the booking form
-document.getElementById('event-form').addEventListener('submit', function(e) {
+// Modal functionality
+const modal = document.getElementById("eventModal");
+const closeBtn = document.getElementsByClassName("close")[0];
+
+function openModal(date) {
+    document.getElementById('eventDate').value = date;
+    modal.style.display = "block";
+}
+
+closeBtn.onclick = function() {
+    modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+// Add event functionality
+document.getElementById('eventForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    const eventDate = document.getElementById('event-date').value;
-    const eventTitle = document.getElementById('event-title').value;
+    const eventDate = document.getElementById('eventDate').value;
+    const eventTitle = document.getElementById('eventTitle').value;
 
     if (!tasksEvents[eventDate]) {
         tasksEvents[eventDate] = [];
@@ -68,16 +92,10 @@ document.getElementById('event-form').addEventListener('submit', function(e) {
     // Save to localStorage
     localStorage.setItem('calendarEvents', JSON.stringify(tasksEvents));
 
-    // Clear the form
-    document.getElementById('event-title').value = '';
+    // Clear the form and close modal
+    document.getElementById('eventTitle').value = '';
+    modal.style.display = "none";
 
     // Re-render the calendar
     renderCalendar();
-});
-
-// Add event listener for clicking on a day
-daysTag.addEventListener('click', function(e) {
-    if (e.target.tagName === 'LI' && !e.target.classList.contains('inactive')) {
-        document.getElementById('event-date').value = e.target.dataset.date;
-    }
 });
