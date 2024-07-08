@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -29,11 +29,16 @@
         </ul>
         <ul class="days"></ul>
       </div>
-      <div class="booking-form">
-        <h3>Add New Event</h3>
-        <form id="event-form">
-          <input type="date" id="event-date" required>
-          <input type="text" id="event-title" placeholder="Event Title" required>
+    </div>
+
+    <!-- Modal for adding events -->
+    <div id="eventModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Add New Event</h2>
+        <form id="eventForm">
+          <input type="hidden" id="eventDate">
+          <input type="text" id="eventTitle" placeholder="Event Title" required>
           <button type="submit">Add Event</button>
         </form>
       </div>
