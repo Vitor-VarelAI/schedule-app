@@ -1,105 +1,117 @@
-/* General body styles */
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* General reset and font setup */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Body styling */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    background-color: #ffffff;
-    font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0 10px;
+  background: #9B59B6;
 }
 
-/* Header styles */
-header {
-    text-align: center;
-    margin-bottom: 20px;
+/* Wrapper styling */
+.wrapper {
+  width: 450px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
 }
 
-/* Calendar table styles */
-#schedule {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    border-collapse: separate;
-    border-spacing: 1px;
-    background-color: #f1f3f4;
+/* Header styling */
+.wrapper header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px 30px 10px;
 }
 
-/* Styles for header and body cells */
-#schedule th, #schedule td {
-    border: none;
-    padding: 5px;
-    text-align: left;
-    vertical-align: top;
+/* Icon styling */
+header .icons {
+  display: flex;
+}
+header .icons span {
+  height: 38px;
+  width: 38px;
+  margin: 0 1px;
+  cursor: pointer;
+  color: #878787;
+  text-align: center;
+  line-height: 38px;
+  font-size: 1.9rem;
+  user-select: none;
+  border-radius: 50%;
+}
+.icons span:last-child {
+  margin-right: -10px;
+}
+header .icons span:hover {
+  background: #f2f2f2;
 }
 
-/* Specific styles for table header */
-#schedule th {
-    background-color: #ffffff;
-    font-weight: normal;
-    text-align: center;
-    color: #70757a;
-    font-size: 0.9em;
+/* Current date styling */
+header .current-date {
+  font-size: 1.45rem;
+  font-weight: 500;
 }
 
-/* Styles for table body cells */
-#schedule td {
-    height: 80px;
-    background-color: #ffffff;
+/* Calendar styling */
+.calendar {
+  padding: 20px;
 }
-
-/* Styles for day number */
-.day {
-    font-weight: bold;
-    display: block;
-    margin-bottom: 3px;
-    color: #70757a;
+.calendar ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  text-align: center;
 }
-
-/* General styles for tasks/events */
-.task {
-    display: block;
-    padding: 2px 4px;
-    margin-top: 3px;
-    border-radius: 4px;
-    font-size: 0.85em;
+.calendar .days {
+  margin-bottom: 20px;
 }
-
-/* Specific styles for birthdays */
-.birthday {
-    background-color: #d2e3fc;
-    color: #1967d2;
+.calendar li {
+  color: #333;
+  width: calc(100% / 7);
+  font-size: 1.07rem;
 }
-
-/* Specific styles for appointments */
-.appointment {
-    background-color: #e8f5e9;
-    color: #0b8043;
+.calendar .weeks li {
+  font-weight: 500;
+  cursor: default;
 }
-
-/* Specific styles for general events */
-.event {
-    background-color: #fce8e6;
-    color: #d93025;
+.calendar .days li {
+  z-index: 1;
+  cursor: pointer;
+  position: relative;
+  margin-top: 30px;
 }
-
-/* Footer styles */
-footer {
-    text-align: center;
-    margin-top: 20px;
-    color: #70757a;
+.days li.inactive {
+  color: #aaa;
 }
-
-/* Media query for smaller screens */
-@media (max-width: 768px) {
-    #schedule {
-        width: 100%;
-    }
-    #schedule th, #schedule td {
-        padding: 2px;
-    }
-    .task {
-        font-size: 0.8em;
-    }
-    #schedule td {
-        height: 60px;
-    }
+.days li.active {
+  color: #fff;
+}
+.days li::before {
+  position: absolute;
+  content: "";
+  left: 50%;
+  top: 50%;
+  height: 40px;
+  width: 40px;
+  z-index: -1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+.days li.active::before {
+  background: #9B59B6;
+}
+.days li:not(.active):hover::before {
+  background: #f2f2f2;
 }
